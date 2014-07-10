@@ -1,24 +1,17 @@
 package net.buildbox.pokeri.maps_showmap;
 
-import java.io.InputStream;
-import java.util.HashMap;
 
-import android.util.Log;
+public class ApiData {//yoshida
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import android.util.Xml;
-
-public class ApiData {
 
 	private InputStream data;
-	
+
 	// コンストラクターで変数srcにxml文字列を受け取る
 	public ApiData(InputStream in) {
 		data = in;
 	}
 
-//--------------------------------------------------------------------------------------------	
+//--------------------------------------------------------------------------------------------
 //	切り出すパラメータのタグを格納する変数
 
 //	ID
@@ -39,9 +32,9 @@ public class ApiData {
 	//IDとタグ名の２次元キーによる配列を実現するため、hashmap内にhashmapを格納する
 	private HashMap<String,String> param;
 	private HashMap<String,HashMap<String,String>> rootParam;
-	
-//--------------------------------------------------------------------------------------------	
-	
+
+//--------------------------------------------------------------------------------------------
+
 	public String parse(){
 
 		Log.d("XmlPullParserSample", "parse start");
@@ -56,13 +49,13 @@ public class ApiData {
 
 		//------------------------------------------------------------------------------------
         //パラメータを切り出す
-		
+
 		//XmlPullParserのインスタンスを得る
 		final XmlPullParser xmlPullParser = Xml.newPullParser();
 
 		//2次元配列。全てのデータを格納するhashmap
 		rootParam = new HashMap<String,HashMap<String,String>>();
-		
+
 		try {
 	    	//xmlデータをxmlPullParserに引き渡す
 	    	xmlPullParser.setInput(data,null);
@@ -81,7 +74,7 @@ public class ApiData {
         while (eventType != XmlPullParser.END_DOCUMENT) {
 
         	try {
-        		
+
         	if(eventType == XmlPullParser.START_TAG) {
 	            if(xmlPullParser.getName().equals(idTag)) {
 	            	//同じ名前のkeyはvalueが上書きされるため、keyにはidだけでなくidの値も追加している
@@ -102,7 +95,7 @@ public class ApiData {
 				eventType = xmlPullParser.next();
 			} catch (Exception e) {
 				Log.d("xmlPullParser", "NextError");
-			} 
+			}
         }
 		//------------------------------------------------------------------------------------
         //切り出したパラメータをString型の戻り値に詰め込む
@@ -111,7 +104,7 @@ public class ApiData {
 
         int cnt = 0;
         String result = null;
-        
+
 		for (String rootKey : rootParam.keySet()) {
 			cnt++;
 			Log.d("xmlPullParserResult", "test2="+rootKey+":cnt="+cnt);
