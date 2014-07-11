@@ -1,6 +1,6 @@
 package net.buildbox.pokeri.maps_showmap;
 
-import java.io.InputStream;
+import java.io.InputStream;//yosjida
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -19,7 +19,7 @@ public class MyAsyncTask extends AsyncTask<String, Integer, String> {
 	GoogleMap map = null;
 	LatLng[] selectedArea = new LatLng[4];
 	
-	//ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÅƒƒCƒ“ƒXƒŒƒbƒh‚Ìmap‚ğó‚¯æ‚é
+	//ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½Åƒï¿½ï¿½Cï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½bï¿½hï¿½ï¿½mapï¿½ï¿½ï¿½ó‚¯ï¿½ï¿½
 	public MyAsyncTask(GoogleMap tmp, LatLng[] tmp2){
 		map = tmp;
 		selectedArea = tmp2;
@@ -34,17 +34,17 @@ public class MyAsyncTask extends AsyncTask<String, Integer, String> {
         InputStream in = null;
 
 //---------------------------------------------------------------------------------------------
-        //ƒNƒGƒŠ‚É‘—‚éˆÊ’uÀ•W‚ğŒˆ‚ß‚é‚½‚ßAlŠpŒ`‚ÌÅ¬•ïŠÜ‰~‚Ì’†SÀ•W‚ğ‹‚ß‚éi‘I‘ğƒGƒŠƒA‚Ì’†S‚ğŒ³‚ÉA”¼ŒaxxƒLƒ“à‚Ì“X‚ğŒŸõA‚Æ‚¢‚¤Œ`‚ÅŒ‹‰Ê‚ği‚éj
-        //”CˆÓ‚Ì3’¸“_‚ÌŠOÚ‰~‚ğ‹‚ßAc‚è1“_‚ª“à•”‚É‚ ‚ê‚ÎOKB‚È‚¯‚ê‚Î•Ê‚Ì3“_‚Ì‘g‚İ‡‚í‚¹‚Å‚·
-        //‚QŸŒ³•½–Ê‚Ì‘z’è‚ÅŒvZ‚µ‚Ä‚¢‚é‚½‚ßAlŠpŒ`‚ª“ú•t•ÏXü‚ğ‚Ü‚½‚¢‚Å‚¢‚éê‡‚Í³Šm‚ÈŒ‹‰Ê‚ğo‚¹‚È‚¢
+        //ï¿½Nï¿½Gï¿½ï¿½ï¿½É‘ï¿½ï¿½ï¿½Ê’uï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ß‚é‚½ï¿½ßAï¿½lï¿½pï¿½`ï¿½ÌÅï¿½ï¿½ï¿½Ü‰~ï¿½Ì’ï¿½ï¿½Sï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½iï¿½Iï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½Aï¿½Ì’ï¿½ï¿½Sï¿½ï¿½ï¿½ï¿½ï¿½ÉAï¿½ï¿½ï¿½axxï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Ì“Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Æ‚ï¿½ï¿½ï¿½ï¿½`ï¿½ÅŒï¿½ï¿½Ê‚ï¿½ï¿½iï¿½ï¿½j
+        //ï¿½Cï¿½Ó‚ï¿½3ï¿½ï¿½ï¿½_ï¿½ÌŠOï¿½Ú‰~ï¿½ï¿½ï¿½ï¿½ï¿½ßAï¿½cï¿½ï¿½1ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½OKï¿½Bï¿½È‚ï¿½ï¿½ï¿½Î•Ê‚ï¿½3ï¿½_ï¿½Ì‘gï¿½İï¿½ï¿½í‚¹ï¿½Åï¿½ï¿½ï¿½
+        //ï¿½Qï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê‚Ì‘zï¿½ï¿½ÅŒvï¿½Zï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚½ï¿½ßAï¿½lï¿½pï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ÏXï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ê‡ï¿½Íï¿½ï¿½mï¿½ÈŒï¿½ï¿½Ê‚ï¿½ï¿½oï¿½ï¿½ï¿½È‚ï¿½
         
         double tmp[] = new double[8];
         int a,b,c;
         
         for (int i=0 ; i <=3 ; i++){
 
-        	//”CˆÓ‚Ì3’¸“_‚ğ‘I‚Ô‚½‚ßAselectedArea‚Ì“Yš‚É‚¨‚¢‚Ä‚ ‚è“¾‚é‘S‚Ä‚Ì‘g‚İ‡‚í‚¹(012,123,230,301)‚ğ“¾‚é
-        	//‘g‚İ‡‚í‚¹‚©‚çŠO‚ê‚é’l‚ği‚Æ‚·‚é‚±‚Æ‚Å(012,123,230,301)‚Ìƒpƒ^[ƒ“‚ğ“¾‚é
+        	//ï¿½Cï¿½Ó‚ï¿½3ï¿½ï¿½ï¿½_ï¿½ï¿½Iï¿½Ô‚ï¿½ï¿½ßAselectedAreaï¿½Ì“Yï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½è“¾ï¿½ï¿½Sï¿½Ä‚Ì‘gï¿½İï¿½ï¿½í‚¹(012,123,230,301)ï¿½ğ“¾‚ï¿½
+        	//ï¿½gï¿½İï¿½ï¿½í‚¹ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½lï¿½ï¿½iï¿½Æ‚ï¿½ï¿½é‚±ï¿½Æ‚ï¿½(012,123,230,301)ï¿½Ìƒpï¿½^ï¿½[ï¿½ï¿½ï¿½ğ“¾‚ï¿½
         	a = 0;
         	if (a == i) { a++; }
 		    if (a > 3) { a = 0; } 
@@ -55,37 +55,37 @@ public class MyAsyncTask extends AsyncTask<String, Integer, String> {
 		    if (c == i) { c++; }
 		    if (c > 3) { c = 0; }
 		    
-		    //ŠOS‚ğŒvZB—‹ü‚Í–¢ŒŸØEEE
+		    //ï¿½Oï¿½Sï¿½ï¿½ï¿½vï¿½Zï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½Í–ï¿½ï¿½ï¿½ï¿½ØEï¿½Eï¿½E
 	        tmp[0] = 2 * (selectedArea[b].longitude - selectedArea[a].longitude);
 	        tmp[1] = 2 * (selectedArea[b].latitude - selectedArea[a].latitude);
 	        tmp[2] = Math.pow(selectedArea[a].longitude,2) - Math.pow(selectedArea[b].longitude,2) + Math.pow(selectedArea[a].latitude,2) - Math.pow(selectedArea[b].latitude,2);
 	        tmp[3] = 2 * (selectedArea[c].longitude - selectedArea[a].longitude);
 	        tmp[4] = 2 * (selectedArea[c].latitude - selectedArea[a].latitude);
 	        tmp[5] = Math.pow(selectedArea[a].longitude,2) - Math.pow(selectedArea[c].longitude,2) + Math.pow(selectedArea[a].latitude,2) - Math.pow(selectedArea[c].latitude,2);
-	        //ŠOS‚ÌxÀ•Wlongitude
+	        //ï¿½Oï¿½Sï¿½ï¿½xï¿½ï¿½ï¿½Wï¿½ï¿½longitude
 	        tmp[6] = ((tmp[1] * tmp[5]) - (tmp[4] * tmp[2])) / ((tmp[0] * tmp[4]) - (tmp[3] * tmp[1]));
-	        //ŠOS‚ÌyÀ•Wlatitude
+	        //ï¿½Oï¿½Sï¿½ï¿½yï¿½ï¿½ï¿½Wï¿½ï¿½latitude
 	        tmp[7] = ((tmp[2] * tmp[3]) - (tmp[5] * tmp[0])) / ((tmp[0] * tmp[4]) - (tmp[3] * tmp[1]));
 	        
-	        //ŠOS‚Ì”¼Œa
+	        //ï¿½Oï¿½Sï¿½Ì”ï¿½ï¿½a
 	        double dx = Math.pow(tmp[6] - selectedArea[a].longitude,2);
 	        double dy = Math.pow(tmp[7] - selectedArea[a].latitude,2);
 	        double distance = Math.sqrt(dx + dy);
 	        
-	        //ŠOS‚Æc‚è‚P“_‚Ì‹——£
+	        //ï¿½Oï¿½Sï¿½Æcï¿½ï¿½Pï¿½_ï¿½Ì‹ï¿½ï¿½ï¿½
 	        double dx2 = Math.pow(tmp[6] - selectedArea[i].longitude,2);
 	        double dy2 = Math.pow(tmp[7] - selectedArea[i].latitude,2);
 	        double distance2 = Math.sqrt(dx2 + dy2);
 	        
-	        //ŠOS‚Æc‚è‚P“_‚Ì‹——£‚ª”¼ŒaˆÈ“à‚Å‚ ‚ê‚ÎÅ¬•ïŠÜ‰~‚ª¬—§‚µ‚Ä‚¢‚é
-	        //ƒ_ƒ‚È‚ç•Ê‚Ì‚P“_‚ğŠO‚µ‚Ä‚à‚¤ˆê“xŒvZ‚·‚é
+	        //ï¿½Oï¿½Sï¿½Æcï¿½ï¿½Pï¿½_ï¿½Ì‹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½aï¿½È“ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ÎÅï¿½ï¿½ï¿½Ü‰~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+	        //ï¿½_ï¿½ï¿½ï¿½È‚ï¿½Ê‚Ì‚Pï¿½_ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½vï¿½Zï¿½ï¿½ï¿½ï¿½
 	        if (distance2 <= distance) {
 	        	break;
 	        }
         }
 
-        Log.d("ÅI”Å@ŠOS‚ÌxÀ•W",""+tmp[6]);
-        Log.d("ÅI”Å@ŠOS‚ÌyÀ•W",""+tmp[7]);
+        Log.d("ï¿½ÅIï¿½Å@ï¿½Oï¿½Sï¿½ï¿½xï¿½ï¿½ï¿½W",""+tmp[6]);
+        Log.d("ï¿½ÅIï¿½Å@ï¿½Oï¿½Sï¿½ï¿½yï¿½ï¿½ï¿½W",""+tmp[7]);
 
 //---------------------------------------------------------------------------------------------
 
@@ -95,33 +95,33 @@ public class MyAsyncTask extends AsyncTask<String, Integer, String> {
         String keyword = null;;
         String qLat = String.valueOf(tmp[7]);
         String qLng = String.valueOf(tmp[6]);
-        String range = "5"; //”¼Œa3km
+        String range = "5"; //ï¿½ï¿½ï¿½a3km
         
-        //ŒŸõƒL[ƒ[ƒh‚ğUTF-8‚ÅURLƒGƒ“ƒR[ƒfƒBƒ“ƒO‚·‚é
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½[ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½UTF-8ï¿½ï¿½URLï¿½Gï¿½ï¿½ï¿½Rï¿½[ï¿½fï¿½Bï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½
         try {
         	keyword = URLEncoder.encode(params[0], "utf-8");
         }catch (UnsupportedEncodingException e){
         	//do nothing
         }
-        // ‚®‚é‚È‚ÑAPI‚Ö‚ÌŒŸõƒNƒGƒŠ‚Æ‚È‚éURL‚ğì¬
+        // ï¿½ï¿½ï¿½ï¿½È‚ï¿½APIï¿½Ö‚ÌŒï¿½ï¿½ï¿½ï¿½Nï¿½Gï¿½ï¿½ï¿½Æ‚È‚ï¿½URLï¿½ï¿½ï¿½ì¬
     	queryUrl += "?keyid="+apiKey+"&hit_per_page="+qPage+"&coordinates_mode=2"+"&freeword=" + keyword + "&range=" + range + "&latitude=" + qLat + "&longitude=" + qLng;
     	
 //---------------------------------------------------------------------------------------------
 		try {
-			//URL‚ÉHTTPÚ‘±
+			//URLï¿½ï¿½HTTPï¿½Ú‘ï¿½
 			URL url = new URL(queryUrl);
 			http = (HttpURLConnection)url.openConnection();
 			http.setRequestMethod("GET");
 			http.connect();
-			// InputStreamŒ^•Ï”in‚Éƒf[ƒ^‚ğƒ_ƒEƒ“ƒ[ƒh
+			// InputStreamï¿½^ï¿½Ïï¿½inï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½ï¿½_ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½h
 			in = http.getInputStream();
 			
-			// ŒŸõŒ‹‰Ê‚Ìxml‚©‚ç•K—v‚Èƒpƒ‰ƒ[ƒ^‚ğØ‚èo‚·
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê‚ï¿½xmlï¿½ï¿½ï¿½ï¿½Kï¿½vï¿½Èƒpï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½ï¿½Ø‚ï¿½oï¿½ï¿½
 			ApiData apiData = new ApiData(in);
 			String src = apiData.parse();
 			Log.d("XmlPullParser", "parsed");
 
-			//æ“¾‚µ‚½xmlƒeƒLƒXƒg‚ğonPostExcecute‚Éˆø‚«“n‚·
+			//ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½xmlï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½onPostExcecuteï¿½Éˆï¿½ï¿½ï¿½ï¿½nï¿½ï¿½
 			return src;
 			
 		} catch(Exception e) {
@@ -139,36 +139,36 @@ public class MyAsyncTask extends AsyncTask<String, Integer, String> {
 //	@Override
 	protected void onPostExecute(String src){
 
-		//ƒ}[ƒJ[‚ÌƒIƒvƒVƒ‡ƒ“—pƒCƒ“ƒXƒ^ƒ“ƒX
+		//ï¿½}ï¿½[ï¿½Jï¿½[ï¿½ÌƒIï¿½vï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½X
 		MarkerOptions options = new MarkerOptions();	
 		Marker marker;
 		
-		//1“X•Ü1s‚ÌŒ`‚ÅØ‚èo‚µ‚Ä”z—ñ‚ÉŠi”[
+		//1ï¿½Xï¿½ï¿½1ï¿½sï¿½ÌŒ`ï¿½ÅØ‚ï¿½oï¿½ï¿½ï¿½Ä”zï¿½ï¿½ÉŠiï¿½[
 		String[] strAry = src.split("\n");
 		
-		// 0s–Ú‚Ínull‚È‚Ì‚ÅAƒXƒLƒbƒv‚µ‚Ä1s–Ú‚©‚çn‚ß‚é
+		// 0ï¿½sï¿½Ú‚ï¿½nullï¿½È‚Ì‚ÅAï¿½Xï¿½Lï¿½bï¿½vï¿½ï¿½ï¿½ï¿½1ï¿½sï¿½Ú‚ï¿½ï¿½ï¿½nï¿½ß‚ï¿½
 		for (int i = 1 ; i < strAry.length ; i++) {
 
-			//1“X•Ü‚ÌŠeƒpƒ‰ƒ[ƒ^‚ğØ‚èo‚µ‚Ä”z—ñ‚ÉŠi”[
+			//1ï¿½Xï¿½Ü‚ÌŠeï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½ï¿½Ø‚ï¿½oï¿½ï¿½ï¿½Ä”zï¿½ï¿½ÉŠiï¿½[
 			String[] strAry2 = strAry[i].split(",");
 			for (int j = 0 ; j < strAry2.length ; j++) {
 			}
 
-			//À•W‚Ì’l‚ğString‚©‚çDouble‚ÉŒ^•ÏŠ·
+			//ï¿½ï¿½ï¿½Wï¿½Ì’lï¿½ï¿½Stringï¿½ï¿½ï¿½ï¿½Doubleï¿½ÉŒ^ï¿½ÏŠï¿½
 			double lat = Double.parseDouble(strAry2[1]);//lat
 			double lng = Double.parseDouble(strAry2[0]);//lng
 			
-	    	// •\¦ˆÊ’ui’·‰Ÿ‚µ‚³‚ê‚½À•Wj‚ğ¶¬
-			// ‹É’[‚ÉÀ•W‚ª‹ß‚¢ê‡‚ÍŒã‚©‚ç¶¬‚³‚ê‚½ƒsƒ“‚ªŠù‘¶‚Ìƒsƒ“‚ğã‘‚«‚·‚é‚ç‚µ‚¢Bu‚æ‚©‚½‚¢v‚ÅŒŸõ‚·‚é‚Æ‚í‚©‚éB
+	    	// ï¿½\ï¿½ï¿½ï¿½Ê’uï¿½iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½Wï¿½jï¿½ğ¶ï¿½
+			// ï¿½É’[ï¿½Éï¿½ï¿½Wï¿½ï¿½ï¿½ß‚ï¿½ï¿½ê‡ï¿½ÍŒã‚©ï¿½ç¶ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒsï¿½ï¿½ï¿½ï¿½ï¿½ã‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç‚µï¿½ï¿½ï¿½Bï¿½uï¿½æ‚©ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½ÅŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚í‚©ï¿½ï¿½B
 	    	LatLng posMapPoint = new LatLng(lat,lng);
 	    	
-	    	//‘I‘ğ”ÍˆÍ“à‚©‚Ç‚¤‚©”»’è‚·‚é
-	    	//“X‚ÌÀ•W‚Æ‘I‘ğ”ÍˆÍ‚ÌŠe•Ó‚ÌƒxƒNƒgƒ‹‚ÌŠOÏ‚ª4•Ó‚Æ‚à•‰‚Å‚ ‚ê‚Î“à•”‚É‚ ‚éB
+	    	//ï¿½Iï¿½ï¿½ÍˆÍ“ï¿½ï¿½ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è‚·ï¿½ï¿½
+	    	//ï¿½Xï¿½Ìï¿½ï¿½Wï¿½Æ‘Iï¿½ï¿½ÍˆÍ‚ÌŠeï¿½Ó‚Ìƒxï¿½Nï¿½gï¿½ï¿½ï¿½ÌŠOï¿½Ï‚ï¿½4ï¿½Ó‚Æ‚ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½Î“ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½B
 	    	
-			// ƒsƒ“‚Æƒ^ƒCƒgƒ‹i“X–¼j‚Ìİ’è
+			// ï¿½sï¿½ï¿½ï¿½Æƒ^ï¿½Cï¿½gï¿½ï¿½ï¿½iï¿½Xï¿½ï¿½ï¿½jï¿½Ìİ’ï¿½
 			options.position(posMapPoint);
 			options.title(strAry2[2]+i);
-			// ƒsƒ“‚Ì’Ç‰Á
+			// ï¿½sï¿½ï¿½ï¿½Ì’Ç‰ï¿½
 			marker = map.addMarker(options);
 		}
 	}
