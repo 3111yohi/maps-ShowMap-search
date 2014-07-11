@@ -2,34 +2,36 @@ package net.buildbox.pokeri.maps_showmap;
 
 
 public class ApiData {//yoshida
+	
+	//fukushima
 
 
 	private InputStream data;
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^[‚Å•Ï”src‚Éxml•¶š—ñ‚ğó‚¯æ‚é
+	// ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½Å•Ïï¿½srcï¿½ï¿½xmlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó‚¯ï¿½ï¿½
 	public ApiData(InputStream in) {
 		data = in;
 	}
 
 //--------------------------------------------------------------------------------------------
-//	Ø‚èo‚·ƒpƒ‰ƒ[ƒ^‚Ìƒ^ƒO‚ğŠi”[‚·‚é•Ï”
+//	ï¿½Ø‚ï¿½oï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½Ìƒ^ï¿½Oï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½Ïï¿½
 
 //	ID
 	private String idTag;
-//	“X–¼
+//	ï¿½Xï¿½ï¿½
 	private String nameTag;
-//	ˆÜ“x
+//	ï¿½Ü“x
 	private String latTag;
-//	Œo“x
+//	ï¿½oï¿½x
 	private String lngTag;
-//	ZŠ
+//	ï¿½Zï¿½ï¿½
 	private String adrsTag;
-//	“d˜b”Ô†
+//	ï¿½dï¿½bï¿½Ôï¿½
 	private String telTag;
-//	ŠT—v
+//	ï¿½Tï¿½v
 	private String smryTag;
 
-	//ID‚Æƒ^ƒO–¼‚Ì‚QŸŒ³ƒL[‚É‚æ‚é”z—ñ‚ğÀŒ»‚·‚é‚½‚ßAhashmap“à‚Éhashmap‚ğŠi”[‚·‚é
+	//IDï¿½Æƒ^ï¿½Oï¿½ï¿½ï¿½Ì‚Qï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½[ï¿½É‚ï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ßAhashmapï¿½ï¿½ï¿½ï¿½hashmapï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½
 	private HashMap<String,String> param;
 	private HashMap<String,HashMap<String,String>> rootParam;
 
@@ -48,22 +50,22 @@ public class ApiData {//yoshida
 		smryTag = "pr_short";
 
 		//------------------------------------------------------------------------------------
-        //ƒpƒ‰ƒ[ƒ^‚ğØ‚èo‚·
+        //ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½ï¿½Ø‚ï¿½oï¿½ï¿½
 
-		//XmlPullParser‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ“¾‚é
+		//XmlPullParserï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ğ“¾‚ï¿½
 		final XmlPullParser xmlPullParser = Xml.newPullParser();
 
-		//2ŸŒ³”z—ñB‘S‚Ä‚Ìƒf[ƒ^‚ğŠi”[‚·‚éhashmap
+		//2ï¿½ï¿½ï¿½ï¿½ï¿½zï¿½ï¿½Bï¿½Sï¿½Ä‚Ìƒfï¿½[ï¿½^ï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½hashmap
 		rootParam = new HashMap<String,HashMap<String,String>>();
 
 		try {
-	    	//xmlƒf[ƒ^‚ğxmlPullParser‚Éˆø‚«“n‚·
+	    	//xmlï¿½fï¿½[ï¿½^ï¿½ï¿½xmlPullParserï¿½Éˆï¿½ï¿½ï¿½ï¿½nï¿½ï¿½
 	    	xmlPullParser.setInput(data,null);
 		}catch (Exception e) {
 				 Log.d("XmlPullParserSample", "setInputError");
 			}
 
-		//xmlƒ^ƒO‚ÌƒXƒe[ƒ^ƒXiEND_DOCUMENT“™j‚ğeventType‚ÉŠi”[‚·‚é
+		//xmlï¿½^ï¿½Oï¿½ÌƒXï¿½eï¿½[ï¿½^ï¿½Xï¿½iEND_DOCUMENTï¿½ï¿½ï¿½jï¿½ï¿½eventTypeï¿½ÉŠiï¿½[ï¿½ï¿½ï¿½ï¿½
 			int eventType = 0;
         try {
 			eventType = xmlPullParser.getEventType();
@@ -77,8 +79,8 @@ public class ApiData {//yoshida
 
         	if(eventType == XmlPullParser.START_TAG) {
 	            if(xmlPullParser.getName().equals(idTag)) {
-	            	//“¯‚¶–¼‘O‚Ìkey‚Ívalue‚ªã‘‚«‚³‚ê‚é‚½‚ßAkey‚É‚Íid‚¾‚¯‚Å‚È‚­id‚Ì’l‚à’Ç‰Á‚µ‚Ä‚¢‚é
-	        		//1ŸŒ³”z—ñB1“X•Ü‚Ìƒf[ƒ^‚É‚Â‚«ˆê‚Â‚ÌhashmapƒCƒ“ƒXƒ^ƒ“ƒX‚ğì‚èAÀ•W“™‚Ìƒf[ƒ^‚ğŠi”[‚·‚é
+	            	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½keyï¿½ï¿½valueï¿½ï¿½ï¿½ã‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚½ï¿½ßAkeyï¿½É‚ï¿½idï¿½ï¿½ï¿½ï¿½ï¿½Å‚È‚ï¿½idï¿½Ì’lï¿½ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+	        		//1ï¿½ï¿½ï¿½ï¿½ï¿½zï¿½ï¿½B1ï¿½Xï¿½Ü‚Ìƒfï¿½[ï¿½^ï¿½É‚Â‚ï¿½ï¿½ï¿½Â‚ï¿½hashmapï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½
 	            	rootParam.put((new String(xmlPullParser.nextText())) + (new String(xmlPullParser.getName())),(param = new HashMap<String,String>()));
 	            }else if (xmlPullParser.getName().equals(nameTag)) {
 	            	param.put(new String(xmlPullParser.getName()),new String(xmlPullParser.nextText()));
@@ -98,9 +100,9 @@ public class ApiData {//yoshida
 			}
         }
 		//------------------------------------------------------------------------------------
-        //Ø‚èo‚µ‚½ƒpƒ‰ƒ[ƒ^‚ğStringŒ^‚Ì–ß‚è’l‚É‹l‚ß‚Ş
+        //ï¿½Ø‚ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½ï¿½Stringï¿½^ï¿½Ì–ß‚ï¿½lï¿½É‹lï¿½ßï¿½ï¿½ï¿½
 
-        //‘I‘ğ‚µ‚½À•W‚Ì“à‘¤‚Å‚ ‚é‚©‚Ç‚¤‚©‚à”»’è‚·‚é
+        //ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½Ì“ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è‚·ï¿½ï¿½
 
         int cnt = 0;
         String result = null;
@@ -114,7 +116,7 @@ public class ApiData {//yoshida
 				Log.d("searchresult",rootParam.get(rootKey).get(paramKey));
 			}
 		}
-		rootParam = null; //ƒƒ‚ƒŠ‚ğ‰ğ•ú‚·‚éˆê•‚Æ‚µ‚Ä‚¢‚éEEE‚Â‚à‚è
+		rootParam = null; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê•ï¿½Æ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Eï¿½Eï¿½Eï¿½Â‚ï¿½ï¿½ï¿½
 		return result;
 	}
 }
